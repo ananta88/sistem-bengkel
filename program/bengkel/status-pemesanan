@@ -1,0 +1,9 @@
+// Di halaman status pesanan yang menghadap pengguna (misalnya, status-pemesanan.php)
+// setelah mengambil detail pesanan untuk pengguna yang login:
+
+// Asumsikan $order_details berisi baris yang diambil dari tabel 'pemesanan'
+if (!empty($order_details['estimated_cost'])) {
+    echo '<p>Perkiraan Biaya: Rp ' . number_format($order_details['estimated_cost'], 2, ',', '.') . '</p>';
+} else {
+    echo '<p>Perkiraan Biaya: Belum Tersedia</p>';
+}
