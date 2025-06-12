@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_perbaikan_mobil
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+
+  web:
+    build: .
+    container_name: php-web
+    volumes:
+      - ./program/bengkel:/var/www/html/
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    platform: linux/amd64
+
+volumes:
+  dbdata:
+

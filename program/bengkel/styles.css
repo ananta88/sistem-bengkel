@@ -776,3 +776,29 @@ table th {
     margin-bottom: 15px;
 }
 
+.status-selesai {
+        color: green;
+        font-weight: bold;
+        background-color: #04df04;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    .status-default {
+        color: #333;
+    }
+
+.btn-wa {
+    background-color: #25D366;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+.btn-wa:hover {
+    background-color: #1da955;
+}

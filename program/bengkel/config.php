@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
+$servername = "db";          // gunakan nama service MySQL di docker-compose
 $username = "root";
-$password = "";
+$password = "root";          // samakan dengan MYSQL_ROOT_PASSWORD
 $database = "db_perbaikan_mobil";
 
 $conn = new mysqli($servername, $username, $password, $database);

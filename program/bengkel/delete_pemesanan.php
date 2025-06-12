@@ -3,7 +3,7 @@ session_start();
 require 'config.php'; // File konfigurasi database
 
 // Cek apakah pengguna adalah admin
-if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     header('Location: login.php');
     exit();
 }
